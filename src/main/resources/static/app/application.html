@@ -1,0 +1,53 @@
+<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="users.html">
+<link rel="import" href="user.html">
+<link rel="import" href="style/application-style.html">
+
+<dom-module id="app-globals">
+      <style>
+        :host {
+          display: block;
+          @apply --paper-font-common-base;
+          font-family: sans-serif;
+        }
+        .content {
+          @apply --layout-vertical;
+          height: 100%;
+        }
+        .pink-toolbar {
+          background: var(--paper-cyan-500);
+          color: white;
+        }
+        app-toolbar {
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+          font-size: 18px;
+        }
+        app-drawer {
+          text-align: left;
+          border-left: 1px solid #ccc;
+        }
+        app-toolbar {
+          --paper-icon-button-ink-color: white;
+        }
+        </style>
+  <template>
+	<iron-pages id="pages" selected="0">
+	 	<users-screen></users-screen>
+	 	<show-user></show-user>
+	</iron-pages>
+	
+  </template>
+
+  <script>
+    HTMLImports.whenReady(function() {
+      Polymer({
+        is: 'app-globals'
+      });
+    });
+  </script>  
+</dom-module>
